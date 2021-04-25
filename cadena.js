@@ -1,30 +1,19 @@
-// Exportar Función Principal
+// Función principal
+let scanString = (str) => {
+  var data = validateString(str);
 
+  console.log("Cadena: " + str);
+
+  data.forEach((element) => {
+    console.log(element);
+    null;
+  });
+};
+
+// Exportar Función Principal
 module.exports.scanString = scanString;
 
-// Función principal
-
-let scanString = (str) => {
-  results = [];
-  // Verifica si es un palindromo o no y regresa un mensaje
-  isPalindrome(str)
-    ? results.push("La cadena es un palindromo")
-    : results.push("La cadena no es un palindromo");
-
-  // Obtiene el número de palabras
-  results.push(wordsCount(str));
-
-  // Obtiene número de letras
-  results.push(letterCount(str));
-
-  // Obtiene número de vocales
-  results.push(letterCount(str));
-
-  // Obtiene número de consonantes
-  results.push(letterCount(str));
-
-  return results;
-};
+// Funciones secundarias
 
 // Verificar si la cadena es un palindromo
 let isPalindrome = (str) => {
@@ -45,7 +34,7 @@ let wordsCount = (str) => {
 
 // Contar el número de letras
 let letterCount = (str) => {
-  var qty;
+  var qty = 0;
   // Pasa un arreglo de caracteres para validar
   const letters = Array.from(str);
   // Recibe el arreglo de caracteres y aumenta el contador si es una letra
@@ -57,7 +46,7 @@ let letterCount = (str) => {
 
 // Contar el número de vocales
 let vocalCount = (str) => {
-  var qty;
+  var qty = 0;
   // Pasa un arreglo de caracteres para validar
   const letters = Array.from(str);
   // Recibe el arreglo de caracteres y aumenta el contador si es una vocal
@@ -69,7 +58,7 @@ let vocalCount = (str) => {
 
 // Contar el número de consonantes
 let consonantCount = (str) => {
-  var qty;
+  var qty = 0;
   // Pasa un arreglo de caracteres para validar
   const letters = Array.from(str);
   /* 
@@ -81,4 +70,26 @@ let consonantCount = (str) => {
     letter.match(/[a-z]/i) ? (letter.match(/[aeiou]/i) ? null : qty++) : null;
   });
   return qty;
+};
+
+let validateString = (str) => {
+  results = [];
+  // Verifica si es un palindromo o no y regresa un mensaje
+  isPalindrome(str)
+    ? results.push("- La cadena es un palindromo")
+    : results.push("- La cadena no es un palindromo");
+
+  // Obtiene el número de palabras
+  results.push("- Cantidad de palabras: " + wordsCount(str));
+
+  // Obtiene número de letras
+  results.push("- Cantidad de letras: " + letterCount(str));
+
+  // Obtiene número de vocales
+  results.push("- Cantidad de vocales: " + vocalCount(str));
+
+  // Obtiene número de consonantes
+  results.push("- Cantidad de consonantes: " + consonantCount(str));
+
+  return results;
 };
