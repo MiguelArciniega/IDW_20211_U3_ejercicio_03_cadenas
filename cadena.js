@@ -1,4 +1,5 @@
-// Función principal
+// ---------------------------> Función principal <----------------------------------
+
 let scanString = (str) => {
   var data = validateString(str);
 
@@ -10,10 +11,11 @@ let scanString = (str) => {
   });
 };
 
-// Exportar Función Principal
+// ---------------------------> Exportar función principal <-------------------------
+
 module.exports.scanString = scanString;
 
-// Funciones secundarias
+// ---------------------------> Funciones secundarias <------------------------------
 
 // Verificar si la cadena es un palindromo
 let isPalindrome = (str) => {
