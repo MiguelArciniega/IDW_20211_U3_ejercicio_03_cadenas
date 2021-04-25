@@ -1,13 +1,12 @@
 // ---------------------------> Función principal <----------------------------------
 
 let scanString = (str) => {
-  var data = validateString(str);
+  var data = getData(str);
 
   console.log("Cadena: " + str);
 
   data.forEach((element) => {
     console.log(element);
-    null;
   });
 };
 
@@ -64,8 +63,7 @@ let consonantCount = (str) => {
   // Pasa un arreglo de caracteres para validar
   const letters = Array.from(str);
   /* 
-    Recibe el arreglo de caracteres y aumenta el contador si es una letra,
-    si es una letra se verifica si es una vocal, si no, es consonante y se aumenta
+    Recibe el arreglo de caracteres, si es una letra, se verifica si es una vocal, si no, es consonante y se aumenta
     el contador 
   */
   letters.forEach((letter) => {
@@ -74,7 +72,8 @@ let consonantCount = (str) => {
   return qty;
 };
 
-let validateString = (str) => {
+// Obtener los datos de las funciones
+let getData = (str) => {
   results = [];
   // Verifica si es un palindromo o no y regresa un mensaje
   isPalindrome(str)
