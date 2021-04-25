@@ -16,6 +16,29 @@ module.exports.scanString = scanString;
 
 // ---------------------------> Funciones secundarias <------------------------------
 
+// Obtener los datos de las funciones
+let getData = (str) => {
+  results = [];
+  // Verifica si es un palindromo o no y regresa un mensaje
+  isPalindrome(str)
+    ? results.push("- La cadena es un palindromo")
+    : results.push("- La cadena no es un palindromo");
+
+  // Obtiene el número de palabras
+  results.push("- Cantidad de palabras: " + wordsCount(str));
+
+  // Obtiene número de letras
+  results.push("- Cantidad de letras: " + letterCount(str));
+
+  // Obtiene número de vocales
+  results.push("- Cantidad de vocales: " + vocalCount(str));
+
+  // Obtiene número de consonantes
+  results.push("- Cantidad de consonantes: " + consonantCount(str));
+
+  return results;
+};
+
 // Verificar si la cadena es un palindromo
 let isPalindrome = (str) => {
   var normalized = str.toLowerCase().match(/[a-z]/gi).reverse();
@@ -70,27 +93,4 @@ let consonantCount = (str) => {
     letter.match(/[a-z]/i) ? (letter.match(/[aeiou]/i) ? null : qty++) : null;
   });
   return qty;
-};
-
-// Obtener los datos de las funciones
-let getData = (str) => {
-  results = [];
-  // Verifica si es un palindromo o no y regresa un mensaje
-  isPalindrome(str)
-    ? results.push("- La cadena es un palindromo")
-    : results.push("- La cadena no es un palindromo");
-
-  // Obtiene el número de palabras
-  results.push("- Cantidad de palabras: " + wordsCount(str));
-
-  // Obtiene número de letras
-  results.push("- Cantidad de letras: " + letterCount(str));
-
-  // Obtiene número de vocales
-  results.push("- Cantidad de vocales: " + vocalCount(str));
-
-  // Obtiene número de consonantes
-  results.push("- Cantidad de consonantes: " + consonantCount(str));
-
-  return results;
 };
