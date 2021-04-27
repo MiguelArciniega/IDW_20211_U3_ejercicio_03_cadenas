@@ -19,6 +19,7 @@ module.exports.scanString = scanString;
 // Obtener los datos de las funciones
 let getData = (str) => {
   results = [];
+
   // Verifica si es un palindromo o no y regresa un mensaje
   isPalindrome(str)
     ? results.push("- La cadena es un palindromo")
@@ -53,6 +54,7 @@ let wordsCount = (str) => {
   str.replace(/[ ]{2,}/gi, " ");
   // Excluye lineas nuevas
   str.replace(/\n /, "\n");
+
   return str.split(" ").length;
 };
 
